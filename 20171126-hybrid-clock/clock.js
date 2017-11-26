@@ -64,20 +64,8 @@ Clock.prototype.textClock = function() {
 Clock.prototype.arcClock = function() {
     var angles = [];
     
-    if (this.hr===0) {
-//        var hr = 12;
-        var hr = this.hr%12;
-        
-    } else {
-        var hr = this.hr%12;
-    }
-    
-    if (this.min===0) {
-//        var min = 60;
-        var min = this.min;
-    } else {
-        var min = this.min;
-    }    
+    var hr = this.hr%12;
+    var min = this.min;
     
     if (this.sec===0) {
         var sec = 60;
