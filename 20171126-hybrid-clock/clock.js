@@ -65,13 +65,16 @@ Clock.prototype.arcClock = function() {
     var angles = [];
     
     if (this.hr===0) {
-        var hr = 12;
+//        var hr = 12;
+        var hr = this.hr%12;
+        
     } else {
         var hr = this.hr%12;
     }
     
     if (this.min===0) {
-        var min = 60;
+//        var min = 60;
+        var min = this.min;
     } else {
         var min = this.min;
     }    
@@ -83,8 +86,8 @@ Clock.prototype.arcClock = function() {
     }
     
     
-    angles[0] = hr*2*PI/12-PI/2;
-    angles[1] = min*2*PI/60-PI/2;
+    angles[0] = hr*2*PI/12-PI/2+0.0000001;
+    angles[1] = min*2*PI/60-PI/2+0.0000001;
     angles[2] = sec*2*PI/60-PI/2;
     
     return angles;
