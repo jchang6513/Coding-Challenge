@@ -3,7 +3,7 @@ function Board() {
     this.gs = 40;
     this.xg = 30;
     this.yg = 16;
-    this.mines = 80;
+    this.mines = 20;
     this.flags = this.mines;
     this.grids = [];
     this.sticked = [];
@@ -96,7 +96,7 @@ Board.prototype.showMine = function(i,j) {
 }
 
 Board.prototype.showNumber = function(i,j) {
-    if (!this.flipped[i][j] && this.gameOn) {
+    if (!this.flipped[i][j] && !this.sticked[i][j] && this.gameOn) {
         if (this.grids[i][j] === 0) {
             stroke(0);
             fill(200);                
@@ -177,12 +177,15 @@ Board.prototype.getStatus = function() {
 }
 
 Board.prototype.checkStatus = function() {
-    var total;
+    var total = 0;
     for (var i=0; i<this.xg; i++) {
         for (var j=0; j<this.yg; j++) {
             if (this.flipped[i][j] === true) {
                 total++;
-            }                
+            }
+            if (this.sticked[i][j] === true) {
+                total++;
+            }            
         }
     }
     
