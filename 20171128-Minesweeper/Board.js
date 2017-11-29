@@ -3,7 +3,7 @@ function Board() {
     this.gs = 40;
     this.xg = 30;
     this.yg = 16;
-    this.mines = 10;
+    this.mines = 80;
     this.flags = this.mines;
     this.grids = [];
     this.sticked = [];
