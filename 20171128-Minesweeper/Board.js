@@ -177,7 +177,16 @@ Board.prototype.getStatus = function() {
 }
 
 Board.prototype.checkStatus = function() {
-    if (this.mines === 0) {
+    var total;
+    for (var i=0; i<this.xg; i++) {
+        for (var j=0; j<this.yg; j++) {
+            if (this.flipped[i][j] === true) {
+                total++;
+            }                
+        }
+    }
+    
+    if (total === this.xg*this.yg) {
         this.gameOn = false;
     }
 }
