@@ -19,20 +19,21 @@ Clock.prototype.update = function() {
     }
     
     noStroke();
-    textSize(40);
-    textStyle('Bold');    
+    textSize(38);
+//    textStyle('Bold');    
     textAlign(CENTER);
     text(this.textClock(), width/2, height/2+10);
 
     var angles = this.arcClock();
     noFill();
-    strokeWeight(10);    
+    strokeCap(SQUARE);
+    strokeWeight(30);    
     stroke(255,0,0);
-    arc(width/2,height/2,400,400,-PI/2,angles[0]);
+    arc(width/2,height/2,220,220,-PI/2,angles[0]);
     stroke(0,255,0);
     arc(width/2,height/2,300,300,-PI/2,angles[1]);
     stroke(0,0,255);
-    arc(width/2,height/2,200,200,-PI/2,angles[2]);
+    arc(width/2,height/2,380,380,-PI/2,angles[2]);
 }
 
 Clock.prototype.textClock = function() {
