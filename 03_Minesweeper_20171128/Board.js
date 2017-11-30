@@ -82,11 +82,11 @@ Board.prototype.showMine = function(i,j) {
         noStroke();
         fill(255,0,0);
         textSize(50);
-        textAlign(CENTER,CENTER);    
+        textAlign(CENTER,CENTER);
         for (var i=0; i<this.xg; i++) {
             for (var j=0; j<this.yg; j++) {
                 if (this.grids[i][j] === -999) {
-                    text("*",i*this.gs+0.5*this.gs,j*this.gs+4*this.gs+0.9*this.gs);
+                    text("*",i*this.gs+0.5*this.gs,j*this.gs+4*this.gs+0.8*this.gs);
                     this.flipped[i][j] = true      
                 }                
             }

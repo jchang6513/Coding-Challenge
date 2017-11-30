@@ -4,16 +4,17 @@ var shr;
 var smin;
 var ssec;
 var secs;
-//var sqFont;
-//function preload() {
-//    sqFont = loadFont('Squareo.ttf');
-//}
+var sqFont;
+
+function preload() {
+    sqFont = loadFont('Square.ttf');
+}
 
 function setup() {
-    textFont('fantasy');
+    textFont(sqFont);
     board = new Board();
     button = createButton('^_^');
-    button.style("font-size", "16px","font-style", "bold");
+    button.style("font-size", "10px","font-style", "bold");
     button.position(width/2-0.5*board.gs,1.7*board.gs);
     button.size(board.gs,board.gs);
     button.mousePressed(restart);
@@ -31,7 +32,7 @@ function draw() {
     fill(0);               
     textAlign(LEFT,CENTER);
     textSize(150);   
-    text("*",0,3*board.gs);
+    text("*",0,2.8*board.gs);
     textSize(40);   
     text(board.flags,55,2*board.gs);
     
