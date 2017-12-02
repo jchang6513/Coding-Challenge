@@ -1,7 +1,7 @@
 var rd = [];
 
 function setup() {
-    cv = createCanvas(displayWidth,displayHeight);
+    cv = createCanvas(windowWidth,windowHeight);
     cv.parent('Matrix');
 
     for (var i=0; i<width; i+=15) {
