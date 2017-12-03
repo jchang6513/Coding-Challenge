@@ -3,12 +3,12 @@ var walls;
 var topScore = 0;
 var sqFont;
 
-//function preload() {
-//    sqFont = loadFont('Square.ttf');
-//}
+function preload() {
+    sqFont = loadFont('Square.ttf');
+}
 
 function setup() {
-//    textFont(sqFont);
+    textFont(sqFont);
     createCanvas(400,600);
     bird = new Bird();
     walls = new Walls();
