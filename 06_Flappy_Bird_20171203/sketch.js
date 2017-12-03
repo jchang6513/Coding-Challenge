@@ -1,19 +1,27 @@
 var bird;
 var walls;
+var topScore = 0;
+var sqFont;
+
+//function preload() {
+//    sqFont = loadFont('Square.ttf');
+//}
 
 function setup() {
+//    textFont(sqFont);
     createCanvas(400,600);
-    background(0);
     bird = new Bird();
     walls = new Walls();
 }
 
 function draw() {
-    background(0);
-    walls.update(bird.getStatus());
-    bird.update(walls);
+    background(255);
+    walls.update();
+    bird.update();
 }
 
 function keyPressed() {
-    bird.flap();
+    if (key === ' ') {
+        bird.flap();
+    }
 }
