@@ -107,7 +107,7 @@ Bird.prototype.checkLife = function() {
 }
 
 Bird.prototype.scored = function() {   
-    if (walls.pos1.x+walls.W == this.pos.x && this.score>=0) {
+    if (walls.pos1.x+walls.W == this.pos.x && this.status>=0) {
         this.score++;
         if (topScore < this.score) {
             topScore = this.score;
