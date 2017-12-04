@@ -39,7 +39,7 @@ Bird.prototype.showReady = function() {
     strokeWeight(4);
     textAlign(CENTER,CENTER)
     textSize(40);
-    text('GET READY',width/2,height/3)
+    text('PRESS SPACE',width/2,height/3)
 }
 
 Bird.prototype.showScore = function() {
