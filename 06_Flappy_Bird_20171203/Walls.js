@@ -1,6 +1,6 @@
 function Walls() {
-    this.H = 58;
-    this.W = 36;
+    this.H = 60;
+    this.W = 40;
     this.pos1 = createVector(1.5*width,floor(random(2*this.H,height-2*this.H)));
     this.pos2 = createVector(2*width,floor(random(2*this.H,height-2*this.H)));
     this.vec = createVector(-2,0);
