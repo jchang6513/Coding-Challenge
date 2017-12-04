@@ -6,6 +6,7 @@ function Bird() {
 }
 
 Bird.prototype.update = function() {
+    
     if (this.status>0) {
         this.flapping();
         this.showScore();
@@ -16,9 +17,11 @@ Bird.prototype.update = function() {
         this.showReady();
     } else if (this.status === -2) {
         this.showBillboard();
-    } else if (this.status === -999) {
+    } else if (this.status === -3) {
         this.dead();
         this.showScore();
+    } else {
+        this.status++;
     }
     
     if (this.status>0 || this.status === -1) {
@@ -70,7 +73,7 @@ Bird.prototype.flap = function() {
     if (this.status === -2) {
         setup();
     }
-    if (this.status !== -999) {
+    if (this.status > -3) {
         this.status = 15;
     }
 }
@@ -96,7 +99,9 @@ Bird.prototype.dead = function() {
 Bird.prototype.checkLife = function() {
     if (walls.pos1.x <= this.pos.x+this.body && walls.pos1.x+walls.W >= this.pos.x) {
         if (this.pos.y <= walls.pos1.y-walls.H || this.pos.y+this.body >= walls.pos1.y+walls.H) {
-            this.status = -999;
+            if (this.status >= 0) {
+                this.status = -13;
+            }            
         }
     }
     
