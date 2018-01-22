@@ -1,10 +1,11 @@
 var atmo;
-function setup() {
-    cv = createCanvas(windowWidth,windowHeight);
-    cv.parent('weather');
-    background(255);
-    loadJSON('data.json', drawWeather);
-    loadJSON('pm25.json', drawPM25);
+var img;
+var raind;
+var dust;
+var noi;
+var co2;
+
+function preload() {
     img = loadImage("sun.png");  
     raind = loadImage("raindrop-close-up.png");  
     dust = loadImage("icon.png");
@@ -12,9 +13,16 @@ function setup() {
     co2 = loadImage("co2.png");
 }
 
+
+function setup() {
+    cv = createCanvas(windowWidth,windowHeight);
+    cv.parent('weather');
+    background(255);
+}
+
 function draw() {
-//    atmo.update();
-//    console.log(atmo.data)
+    loadJSON('data.json', drawWeather);
+    loadJSON('pm25.json', drawPM25);
 }
 
 function drawWeather(data) {
