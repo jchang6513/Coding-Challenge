@@ -36,6 +36,7 @@ function drawWeather(data) {
     var iCO2 = data['body']['devices'][0]['dashboard_data']['CO2'];
     var iNoi = data['body']['devices'][0]['dashboard_data']['Noise'];
 
+    colorMode(RGB)
     if (hour()>12) {
         fill(0, 0, 50);        
     } else {
@@ -126,6 +127,7 @@ function drawWeather(data) {
 }
 
 function drawPM25(data){
+    colorMode(RGB)
     fill(255);
     textSize(40);
     noStroke();
