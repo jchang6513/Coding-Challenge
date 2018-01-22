@@ -8,9 +8,7 @@ var co2;
 function setup() {
     cv = createCanvas(windowWidth,windowHeight);
     cv.parent('weather');
-    background(255);
-    loadJSON('data.json', drawWeather);
-    loadJSON('pm25.json', drawPM25);    
+    background(255);    
     img = loadImage("sun.png");  
     raind = loadImage("raindrop-close-up.png");  
     dust = loadImage("icon.png");
@@ -19,6 +17,8 @@ function setup() {
 }
 
 function draw() {
+    loadJSON('data.json', drawWeather);
+    loadJSON('pm25.json', drawPM25);
 }
 
 function drawWeather(data) {
