@@ -17,6 +17,7 @@ function setup() {
 }
 
 function draw() {
+    frameRate(1)
     loadJSON('data.json', drawWeather);
     loadJSON('pm25.json', drawPM25);
 }
