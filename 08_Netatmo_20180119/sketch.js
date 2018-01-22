@@ -18,11 +18,11 @@ function setup() {
     cv = createCanvas(windowWidth,windowHeight);
     cv.parent('weather');
     background(255);
+    loadJSON('data.json', drawWeather);
+    loadJSON('pm25.json', drawPM25);    
 }
 
 function draw() {
-    loadJSON('data.json', drawWeather);
-    loadJSON('pm25.json', drawPM25);
 }
 
 function drawWeather(data) {
